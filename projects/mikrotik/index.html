@@ -1,554 +1,402 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>MikroTik Network Lab — Yahya Fauzan Sumpena Putra</title>
 
-    <meta
-        name="description"
-        content="Project 01 — MikroTik Network Lab oleh Yahya Fauzan Sumpena Putra."
-    >
-
-    <meta
-        name="author"
-        content="Yahya Fauzan Sumpena Putra"
-    >
-
-    <link
-        rel="canonical"
-        href="https://yahyafauzan.my.id/projects/mikrotik/"
-    >
-
-    <title>
-        MikroTik Network Lab — Yahya Fauzan Sumpena Putra
-    </title>
-
+    <meta name="description"
+        content="MikroTik Network Lab — Dokumentasi project pembelajaran jaringan menggunakan MikroTik RouterOS oleh Yahya Fauzan Sumpena Putra.">
 
     <style>
-
-        :root {
-            --bg: #070b12;
-            --card: #0d1420;
-            --text: #e8eef7;
-            --muted: #9aa8bb;
-            --accent: #55d6ff;
-            --border: rgba(255,255,255,.09);
-        }
-
-
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
 
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-            margin: 0;
-
-            background:
-                radial-gradient(
-                    circle at 15% 0%,
-                    rgba(85,214,255,.08),
-                    transparent 30%
-                ),
-                var(--bg);
-
-            color: var(--text);
-
-            font-family:
-                Inter,
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
+            background: #070b12;
+            color: #e8eef7;
             line-height: 1.7;
         }
-
 
         a {
             color: inherit;
             text-decoration: none;
         }
 
-
-        .container {
-            width: min(1050px, calc(100% - 32px));
-            margin: auto;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-
-        /* HEADER */
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
             position: sticky;
             top: 0;
             z-index: 100;
-
-            background:
-                rgba(7,11,18,.85);
-
-            backdrop-filter: blur(14px);
-
-            border-bottom:
-                1px solid var(--border);
+            background: rgba(7, 11, 18, 0.94);
+            border-bottom: 1px solid #1c2633;
+            backdrop-filter: blur(12px);
         }
 
-
-        nav {
-            min-height: 68px;
-
+        .nav {
+            max-width: 1000px;
+            margin: auto;
+            padding: 18px 24px;
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            gap: 20px;
         }
 
-
-        .logo {
-            font-weight: 800;
-            letter-spacing: .02em;
+        .brand {
+            font-weight: 700;
+            font-size: 15px;
         }
 
-
-        .logo span {
-            color: var(--accent);
+        .brand span {
+            color: #35d6ff;
         }
-
 
         .back {
-            color: var(--muted);
-
-            font-size: .95rem;
+            color: #9eabbc;
+            font-size: 14px;
+            transition: 0.2s;
         }
-
 
         .back:hover {
-            color: var(--text);
+            color: #35d6ff;
         }
 
+        /* =========================
+           CONTAINER
+        ========================= */
 
-        /* HERO */
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 24px;
+        }
+
+        section {
+            margin-bottom: 90px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
-            padding: 90px 0 60px;
+            padding-bottom: 40px;
         }
-
 
         .label {
             display: inline-block;
-
-            color: var(--accent);
-
-            font-size: .82rem;
-
-            font-weight: 800;
-
-            letter-spacing: .12em;
+            color: #35d6ff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
         }
-
 
         h1 {
-            margin: 16px 0;
-
-            font-size:
-                clamp(2.4rem, 7vw, 4.8rem);
-
+            font-size: clamp(42px, 7vw, 72px);
             line-height: 1.05;
-
-            letter-spacing: -.045em;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
         }
 
-
-        .hero-description {
-            max-width: 780px;
-
-            color: var(--muted);
-
-            font-size: 1.08rem;
+        .hero p {
+            max-width: 760px;
+            color: #9eb1c7;
+            font-size: 17px;
         }
-
 
         .tags {
             display: flex;
-
             flex-wrap: wrap;
-
-            gap: 9px;
-
-            margin-top: 24px;
+            gap: 10px;
+            margin-top: 25px;
         }
-
 
         .tag {
-            padding: 7px 12px;
-
-            border:
-                1px solid var(--border);
-
+            border: 1px solid #263342;
+            background: #0d141e;
             border-radius: 999px;
-
-            background:
-                rgba(255,255,255,.025);
-
-            color: #cbd6e5;
-
-            font-size: .86rem;
+            padding: 6px 12px;
+            color: #b7c6d8;
+            font-size: 13px;
         }
 
+        /* =========================
+           TITLES
+        ========================= */
 
-        /* SECTION */
-
-        section {
-            padding: 35px 0;
+        h2 {
+            font-size: 30px;
+            margin-bottom: 25px;
         }
 
-
-        .section-title {
-            margin-bottom: 20px;
-
-            font-size: 1.6rem;
+        h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
         }
 
+        .section-description {
+            color: #91a3b8;
+            margin-bottom: 28px;
+        }
 
-        /* CARD */
+        /* =========================
+           CARDS
+        ========================= */
 
         .grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0,1fr));
-
+            grid-template-columns: repeat(2, 1fr);
             gap: 18px;
         }
 
-
         .card {
+            background: #0d141e;
+            border: 1px solid #202d3c;
+            border-radius: 16px;
             padding: 24px;
-
-            background:
-                linear-gradient(
-                    180deg,
-                    rgba(17,26,40,.92),
-                    rgba(13,20,32,.92)
-                );
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 18px;
-
-            transition:
-                transform .2s ease,
-                border-color .2s ease;
         }
 
-
-        .card:hover {
-            transform: translateY(-3px);
-
-            border-color:
-                rgba(85,214,255,.3);
+        .card p {
+            color: #9db0c5;
         }
 
-
-        .card h3 {
-            margin-top: 0;
-        }
-
-
-        .card p,
-        .card li {
-            color: var(--muted);
-        }
-
-
-        ul {
-            margin: 10px 0 0;
-
+        .card ul {
             padding-left: 20px;
+            color: #9db0c5;
         }
 
+        /* =========================
+           BAB
+        ========================= */
 
-        /* NETWORK */
-
-        .network {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0,1fr));
-
-            gap: 14px;
+        .chapter {
+            margin-bottom: 65px;
         }
 
-
-        .network-item {
-            padding: 18px;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 15px;
-
-            background:
-                rgba(255,255,255,.025);
+        .chapter-number {
+            color: #35d6ff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin-bottom: 6px;
         }
 
-
-        .network-item strong {
-            display: block;
-
-            margin-bottom: 4px;
+        .chapter-title {
+            font-size: 27px;
+            margin-bottom: 10px;
         }
 
-
-        .network-item span {
-            color: var(--muted);
-
-            font-size: .92rem;
+        .chapter-text {
+            color: #94a8bd;
+            margin-bottom: 24px;
         }
 
+        /* =========================
+           DOCUMENTATION IMAGE
+        ========================= */
 
-        /* FEATURES */
-
-        .feature-list {
-            display: grid;
-
-            gap: 12px;
+        .documentation {
+            background: #0b111a;
+            border: 1px solid #202d3c;
+            border-radius: 16px;
+            padding: 16px;
+            overflow: hidden;
         }
 
-
-        .feature {
-            padding: 16px 18px;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 14px;
-
-            background:
-                rgba(255,255,255,.02);
+        .documentation img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid #202d3c;
+            background: #05080d;
         }
 
-
-        .feature strong {
-            display: block;
-
-            margin-bottom: 3px;
+        .caption {
+            padding: 16px 4px 2px;
+            color: #9db0c5;
+            font-size: 14px;
         }
 
-
-        .feature span {
-            color: var(--muted);
-
-            font-size: .94rem;
-        }
-
-
-        /* RESULT */
+        /* =========================
+           RESULT
+        ========================= */
 
         .result {
-            border-left:
-                3px solid var(--accent);
+            background: #0e1723;
+            border: 1px solid #2a3b4f;
+            border-left: 3px solid #35d6ff;
+            border-radius: 16px;
+            padding: 30px;
         }
 
+        .result p {
+            color: #a8b8ca;
+            margin-bottom: 20px;
+        }
 
         .button {
             display: inline-block;
-
-            margin-top: 15px;
-
             padding: 10px 16px;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 11px;
-
-            background:
-                rgba(255,255,255,.04);
+            border: 1px solid #293747;
+            border-radius: 10px;
+            background: #111b27;
+            color: #e8eef7;
+            font-size: 14px;
+            transition: 0.2s;
         }
-
 
         .button:hover {
-            border-color:
-                rgba(85,214,255,.35);
+            border-color: #35d6ff;
+            color: #35d6ff;
         }
 
-
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            margin-top: 40px;
-
-            padding: 50px 0 70px;
-
-            border-top:
-                1px solid var(--border);
-
-            color: var(--muted);
+            border-top: 1px solid #1c2633;
+            padding: 35px 24px;
+            color: #73859a;
+            font-size: 14px;
         }
 
+        .footer-inner {
+            max-width: 1000px;
+            margin: auto;
+        }
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
-        @media (max-width: 720px) {
+        @media (max-width: 700px) {
+
+            .nav {
+                padding: 16px 18px;
+            }
+
+            .brand {
+                font-size: 14px;
+            }
+
+            main {
+                padding: 55px 18px;
+            }
+
+            h1 {
+                font-size: 42px;
+                letter-spacing: -1.5px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
 
             .grid {
                 grid-template-columns: 1fr;
             }
 
-
-            .network {
-                grid-template-columns: 1fr;
+            .chapter-title {
+                font-size: 24px;
             }
 
-
-            .hero {
-                padding-top: 60px;
+            section {
+                margin-bottom: 65px;
             }
 
-
-            nav {
-                gap: 10px;
+            .documentation {
+                padding: 10px;
             }
-
-
-            .logo {
-                font-size: .9rem;
-            }
-
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
+    <nav class="nav">
 
-    <nav class="container">
-
-        <a
-            class="logo"
-            href="../../../"
-        >
-
-            <span>YF.</span>
-
-            Yahya Fauzan Sumpena Putra
-
+        <a href="/" class="brand">
+            <span>YF.</span> Yahya Fauzan Sumpena Putra
         </a>
 
-
-        <a
-            class="back"
-            href="../../../#projects"
-        >
-
+        <a href="/" class="back">
             ← Portfolio
-
         </a>
 
     </nav>
-
 </header>
-
 
 
 <main>
 
+    <!-- =========================
+         HERO
+    ========================= -->
 
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="container">
+    <section class="hero">
 
         <div class="label">
             PROJECT 01
         </div>
 
-
         <h1>
             MikroTik Network Lab
         </h1>
 
-
-        <p class="hero-description">
-
-            Project pembelajaran jaringan menggunakan
-            MikroTik RouterOS dengan implementasi
-            DHCP, VLAN, Firewall, NAT, Routing,
-            Hotspot, VPN, Queue, dan Wireless
-            dalam satu project terintegrasi.
-
+        <p>
+            Project pembelajaran dan praktik jaringan menggunakan
+            MikroTik RouterOS. Project ini mendokumentasikan konfigurasi
+            jaringan, layanan, keamanan, bandwidth management,
+            VPN, wireless, monitoring, testing, dan backup konfigurasi.
         </p>
 
-
         <div class="tags">
-
-            <span class="tag">
-                MikroTik
-            </span>
-
-            <span class="tag">
-                Networking
-            </span>
-
-            <span class="tag">
-                RouterOS
-            </span>
-
-            <span class="tag">
-                Firewall
-            </span>
-
-            <span class="tag">
-                VPN
-            </span>
-
+            <span class="tag">MikroTik</span>
+            <span class="tag">Networking</span>
+            <span class="tag">RouterOS</span>
+            <span class="tag">Firewall</span>
+            <span class="tag">VPN</span>
+            <span class="tag">Monitoring</span>
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
+    <!-- =========================
+         OVERVIEW
+    ========================= -->
 
-<!-- OVERVIEW -->
+    <section>
 
-<section>
-
-    <div class="container">
-
-        <h2 class="section-title">
+        <h2>
             Project Overview
         </h2>
 
-
         <div class="grid">
-
 
             <div class="card">
 
@@ -557,12 +405,9 @@
                 </h3>
 
                 <p>
-
-                    Membangun dan mengonfigurasi jaringan
-                    menggunakan MikroTik sebagai perangkat
-                    utama untuk mempraktikkan konfigurasi
-                    jaringan dan pengelolaan traffic.
-
+                    Membangun dan mempraktikkan konfigurasi jaringan
+                    menggunakan perangkat MikroTik sebagai bagian
+                    dari pembelajaran jaringan komputer.
                 </p>
 
             </div>
@@ -571,393 +416,642 @@
             <div class="card">
 
                 <h3>
-                    Environment
+                    Perangkat & Environment
                 </h3>
 
                 <ul>
-
-                    <li>
-                        MikroTik RB941-2nD
-                    </li>
-
-                    <li>
-                        RouterOS 6.48.6
-                    </li>
-
-                    <li>
-                        WinBox / RouterOS
-                    </li>
-
-                    <li>
-                        WAN melalui ether1
-                    </li>
-
-                    <li>
-                        LAN melalui bridge-LAN
-                    </li>
-
-                    <li>
-                        Wireless melalui wlan1
-                    </li>
-
+                    <li>MikroTik RB941-2nD</li>
+                    <li>RouterOS</li>
+                    <li>WinBox / RouterOS</li>
+                    <li>WAN melalui interface router</li>
+                    <li>LAN melalui bridge</li>
+                    <li>Wireless melalui wlan1</li>
                 </ul>
 
             </div>
 
-
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
+    <!-- =========================
+         TOPOLOGY
+    ========================= -->
 
-<!-- NETWORK SEGMENTATION -->
+    <section>
 
-<section>
+        <div class="chapter-number">
+            PROJECT TOPOLOGY
+        </div>
 
-    <div class="container">
-
-        <h2 class="section-title">
-            Network Segmentation
+        <h2>
+            Network Topology
         </h2>
 
-
-        <div class="network">
-
-
-            <div class="network-item">
-
-                <strong>
-                    LAN
-                </strong>
-
-                <span>
-                    192.168.10.0/24
-                </span>
-
-            </div>
-
-
-            <div class="network-item">
-
-                <strong>
-                    STAFF
-                </strong>
-
-                <span>
-                    VLAN 10 · 192.168.20.0/24
-                </span>
-
-            </div>
-
-
-            <div class="network-item">
-
-                <strong>
-                    GUEST
-                </strong>
-
-                <span>
-                    VLAN 20 · 192.168.30.0/24
-                </span>
-
-            </div>
-
-
-            <div class="network-item">
-
-                <strong>
-                    CCTV
-                </strong>
-
-                <span>
-                    VLAN 30 · 192.168.40.0/24
-                </span>
-
-            </div>
-
-
-            <div class="network-item">
-
-                <strong>
-                    Wi-Fi
-                </strong>
-
-                <span>
-                    192.168.18.0/24
-                </span>
-
-            </div>
-
-
-            <div class="network-item">
-
-                <strong>
-                    VPN Pool
-                </strong>
-
-                <span>
-                    192.168.50.0/24
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- IMPLEMENTATION -->
-
-<section>
-
-    <div class="container">
-
-        <h2 class="section-title">
-            Network Implementation
-        </h2>
-
-
-        <div class="feature-list">
-
-
-            <div class="feature">
-
-                <strong>
-                    DHCP
-                </strong>
-
-                <span>
-                    Konfigurasi DHCP untuk menyediakan
-                    alamat IP secara otomatis pada
-                    jaringan yang digunakan.
-                </span>
-
-            </div>
-
-
-            <div class="feature">
-
-                <strong>
-                    VLAN
-                </strong>
-
-                <span>
-                    Segmentasi jaringan untuk STAFF,
-                    GUEST, dan CCTV.
-                </span>
-
-            </div>
-
-
-            <div class="feature">
-
-                <strong>
-                    Firewall
-                </strong>
-
-                <span>
-                    Pengaturan traffic menggunakan
-                    firewall filter dan mangle.
-                </span>
-
-            </div>
-
-
-            <div class="feature">
-
-                <strong>
-                    NAT
-                </strong>
-
-                <span>
-                    Konfigurasi Network Address Translation
-                    untuk kebutuhan akses jaringan.
-                </span>
-
-            </div>
-
-
-            <div class="feature">
-
-                <strong>
-                    Routing
-                </strong>
-
-                <span>
-                    Pengaturan jalur komunikasi
-                    antar jaringan.
-                </span>
-
-            </div>
-
-
-            <div class="feature">
-
-                <strong>
-                    Queue
-                </strong>
-
-                <span>
-                    Pengaturan bandwidth menggunakan
-                    Simple Queue.
-                </span>
-
-            </div>
-
-
-            <div class="feature">
-
-                <strong>
-                    Hotspot
-                </strong>
-
-                <span>
-                    Implementasi layanan Hotspot
-                    pada jaringan.
-                </span>
-
-            </div>
-
-
-            <div class="feature">
-
-                <strong>
-                    VPN
-                </strong>
-
-                <span>
-                    Implementasi L2TP/IPsec VPN
-                    untuk akses jaringan.
-                </span>
-
-            </div>
-
-
-            <div class="feature">
-
-                <strong>
-                    Wireless
-                </strong>
-
-                <span>
-                    Konfigurasi jaringan wireless
-                    melalui interface wlan1.
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- DOCUMENTATION -->
-
-<section>
-
-    <div class="container">
-
-        <h2 class="section-title">
-            Documentation
-        </h2>
-
-
-        <div class="card">
-
-            <p>
-
-                Dokumentasi visual project akan
-                ditempatkan di bagian ini menggunakan
-                screenshot konfigurasi MikroTik,
-                topologi, dan hasil pengujian.
-
-            </p>
-
-
-            <p>
-
-                Dokumentasi akan disusun berdasarkan
-                praktik project MikroTik yang telah
-                dikerjakan.
-
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- RESULT -->
-
-<section>
-
-    <div class="container">
-
-        <div class="card result">
-
-            <h2>
-                Project Result
-            </h2>
-
-
-            <p>
-
-                Project menghasilkan konfigurasi
-                jaringan MikroTik yang mencakup
-                segmentasi jaringan, DHCP, Firewall,
-                NAT, Routing, bandwidth management,
-                Hotspot, VPN, dan Wireless.
-
-            </p>
-
-
-            <a
-                class="button"
-                href="../../../#projects"
+        <p class="section-description">
+            Gambaran topologi jaringan yang digunakan dalam
+            MikroTik Network Lab.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Topology.png"
+                alt="Topology MikroTik Network Lab"
+                loading="lazy"
             >
 
-                ← Kembali ke Portfolio
+            <div class="caption">
+                Topologi MikroTik Network Lab.
+            </div>
 
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 01
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 01
+        </div>
+
+        <h2 class="chapter-title">
+            Network Interface
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi interface yang digunakan pada perangkat
+            MikroTik dalam project.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Interface.png"
+                alt="MikroTik Interface"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Konfigurasi dan daftar interface MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 02
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 02
+        </div>
+
+        <h2 class="chapter-title">
+            IP Address
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi konfigurasi alamat IP pada interface
+            jaringan MikroTik.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/IP-Addreses.png"
+                alt="MikroTik IP Addresses"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Konfigurasi IP Address pada MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 03
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 03
+        </div>
+
+        <h2 class="chapter-title">
+            DHCP Server
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi konfigurasi DHCP Server untuk pengelolaan
+            alamat IP client pada jaringan.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/DHCP-Server.png"
+                alt="MikroTik DHCP Server"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Konfigurasi DHCP Server pada MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 04
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 04
+        </div>
+
+        <h2 class="chapter-title">
+            Firewall
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi konfigurasi firewall untuk pengelolaan
+            dan pengamanan traffic jaringan.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Firewall.png"
+                alt="MikroTik Firewall"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Firewall Filter Rules pada MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 05
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 05
+        </div>
+
+        <h2 class="chapter-title">
+            NAT
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi Network Address Translation yang digunakan
+            pada project jaringan.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/NAT.png"
+                alt="MikroTik NAT"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Konfigurasi NAT pada MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 06
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 06
+        </div>
+
+        <h2 class="chapter-title">
+            Routing
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi konfigurasi routing dan route yang
+            digunakan pada jaringan.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Routing.png"
+                alt="MikroTik Routing"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Routing table pada MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 07
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 07
+        </div>
+
+        <h2 class="chapter-title">
+            Simple Queue
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi pengelolaan bandwidth menggunakan
+            Simple Queue.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Simple-Queue.png"
+                alt="MikroTik Simple Queue"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Konfigurasi Simple Queue untuk bandwidth management.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 08
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 08
+        </div>
+
+        <h2 class="chapter-title">
+            VPN
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi konfigurasi VPN pada MikroTik Network Lab.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/VPN.png"
+                alt="MikroTik VPN"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Konfigurasi VPN pada MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 09
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 09
+        </div>
+
+        <h2 class="chapter-title">
+            Wireless
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi konfigurasi wireless pada perangkat
+            MikroTik.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Wireless.png"
+                alt="MikroTik Wireless"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Konfigurasi wireless interface MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 10
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 10
+        </div>
+
+        <h2 class="chapter-title">
+            Firewall Mangle
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi rule Mangle yang terdapat pada konfigurasi
+            MikroTik project.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Mangle.png"
+                alt="MikroTik Mangle"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Konfigurasi Mangle pada MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 11
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 11
+        </div>
+
+        <h2 class="chapter-title">
+            Traffic Monitoring
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi monitoring traffic interface untuk melihat
+            aktivitas jaringan.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Monitoring-Traffic.png"
+                alt="MikroTik Traffic Monitoring"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Monitoring traffic pada interface MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 12
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 12
+        </div>
+
+        <h2 class="chapter-title">
+            Torch Monitoring
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi penggunaan Torch untuk melakukan
+            monitoring traffic secara lebih detail.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Monitoring-Torch.png"
+                alt="MikroTik Torch Monitoring"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Monitoring traffic menggunakan Torch.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 13
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 13
+        </div>
+
+        <h2 class="chapter-title">
+            Traceroute Monitoring
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi pengujian jalur jaringan menggunakan
+            traceroute.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Monitoring-Traceroute.png"
+                alt="MikroTik Traceroute"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Pengujian jalur jaringan menggunakan traceroute.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 14
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 14
+        </div>
+
+        <h2 class="chapter-title">
+            Internet Testing
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi pengujian konektivitas internet dari
+            MikroTik menggunakan ping.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Tseting-Internet.png"
+                alt="MikroTik Internet Testing"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Testing konektivitas menggunakan ping.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BAB 15
+    ========================= -->
+
+    <section class="chapter">
+
+        <div class="chapter-number">
+            BAB 15
+        </div>
+
+        <h2 class="chapter-title">
+            Backup & Project Documentation
+        </h2>
+
+        <p class="chapter-text">
+            Dokumentasi backup konfigurasi sebagai bagian dari
+            pengelolaan project MikroTik.
+        </p>
+
+        <div class="documentation">
+
+            <img
+                src="images/Backup-Konfigurasi.png"
+                alt="MikroTik Backup Configuration"
+                loading="lazy"
+            >
+
+            <div class="caption">
+                Backup konfigurasi MikroTik.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECT RESULT
+    ========================= -->
+
+    <section>
+
+        <h2>
+            Project Result
+        </h2>
+
+        <div class="result">
+
+            <h3>
+                MikroTik Network Lab
+            </h3>
+
+            <p>
+                Project ini mendokumentasikan praktik konfigurasi
+                jaringan menggunakan MikroTik, mulai dari interface,
+                IP addressing, DHCP, firewall, NAT, routing,
+                bandwidth management, VPN, wireless, Mangle,
+                monitoring, testing, hingga backup konfigurasi.
+            </p>
+
+            <a href="/" class="button">
+                ← Kembali ke Portfolio
             </a>
 
         </div>
 
-    </div>
-
-</section>
-
+    </section>
 
 </main>
 
 
-
-<!-- FOOTER -->
-
 <footer>
 
-    <div class="container">
-
+    <div class="footer-inner">
         © Yahya Fauzan Sumpena Putra · MikroTik Network Lab
-
     </div>
 
 </footer>
 
-
 </body>
-
 </html>
