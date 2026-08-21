@@ -6,290 +6,306 @@
 
 <title>Proxmox Server Lab — Yahya Fauzan Sumpena Putra</title>
 
-<meta name="description" content="Proxmox Server Lab — Project virtualisasi server, Linux Server, Web Server, Database Server, dan Moodle.">
+<meta name="description" content="Proxmox Server Lab — Dokumentasi project virtualisasi server, Linux Server, Web Server, Database Server, dan Moodle oleh Yahya Fauzan Sumpena Putra.">
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#070b12;
-    color:#e8eef7;
-    line-height:1.7;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070b12;
+    color: #e8eef7;
+    line-height: 1.7;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-img{
-    max-width:100%;
-    display:block;
+img {
+    max-width: 100%;
+    display: block;
 }
 
-header{
-    position:sticky;
-    top:0;
-    z-index:100;
-    background:rgba(7,11,18,.94);
-    border-bottom:1px solid #1c2633;
-    backdrop-filter:blur(12px);
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7, 11, 18, 0.95);
+    border-bottom: 1px solid #1c2633;
+    backdrop-filter: blur(12px);
 }
 
-.nav{
-    max-width:1000px;
-    margin:auto;
-    padding:18px 24px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.nav {
+    max-width: 1000px;
+    margin: auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.brand{
-    font-weight:700;
-    font-size:15px;
+.brand {
+    font-weight: 700;
+    font-size: 15px;
 }
 
-.brand span{
-    color:#35d6ff;
+.brand span {
+    color: #35d6ff;
 }
 
-.back{
-    color:#9eabbc;
-    font-size:14px;
+.back {
+    color: #9eabbc;
+    font-size: 14px;
 }
 
-.back:hover{
-    color:#35d6ff;
+.back:hover {
+    color: #35d6ff;
 }
 
-main{
-    max-width:1000px;
-    margin:auto;
-    padding:80px 24px;
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 80px 24px;
 }
 
-section{
-    margin-bottom:85px;
+section {
+    margin-bottom: 85px;
 }
 
-.label{
-    display:inline-block;
-    color:#35d6ff;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    margin-bottom:18px;
+.label {
+    display: inline-block;
+    color: #35d6ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
 }
 
-h1{
-    font-size:clamp(42px,7vw,72px);
-    line-height:1.05;
-    letter-spacing:-2px;
-    margin-bottom:24px;
+h1 {
+    font-size: clamp(42px, 7vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
 }
 
-.hero-text{
-    max-width:780px;
-    color:#9eb1c7;
-    font-size:17px;
+.hero-text {
+    max-width: 780px;
+    color: #9eb1c7;
+    font-size: 17px;
 }
 
-.tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:25px;
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
 }
 
-.tag{
-    border:1px solid #263342;
-    background:#0d141e;
-    border-radius:999px;
-    padding:6px 12px;
-    color:#b7c6d8;
-    font-size:13px;
+.tag {
+    border: 1px solid #263342;
+    background: #0d141e;
+    border-radius: 999px;
+    padding: 6px 12px;
+    color: #b7c6d8;
+    font-size: 13px;
 }
 
-h2{
-    font-size:30px;
-    margin-bottom:25px;
+h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
 }
 
-h3{
-    font-size:19px;
-    margin-bottom:10px;
+h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
 }
 
-.section-description{
-    color:#91a3b8;
-    margin-bottom:28px;
+.section-description {
+    color: #91a3b8;
+    margin-bottom: 28px;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
-.card{
-    background:#0d141e;
-    border:1px solid #202d3c;
-    border-radius:16px;
-    padding:24px;
+.card {
+    background: #0d141e;
+    border: 1px solid #202d3c;
+    border-radius: 16px;
+    padding: 24px;
 }
 
 .card p,
-.card li{
-    color:#9db0c5;
+.card li {
+    color: #9db0c5;
 }
 
-.card ul{
-    padding-left:20px;
+.card ul {
+    padding-left: 20px;
 }
 
-.chapter{
-    margin-bottom:65px;
+.chapter {
+    margin-bottom: 65px;
 }
 
-.chapter-number{
-    color:#35d6ff;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:1.2px;
-    margin-bottom:6px;
+.chapter-number {
+    color: #35d6ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
 }
 
-.chapter-title{
-    font-size:27px;
-    margin-bottom:10px;
+.chapter-title {
+    font-size: 27px;
+    margin-bottom: 10px;
 }
 
-.chapter-text{
-    color:#94a8bd;
-    margin-bottom:24px;
+.chapter-text {
+    color: #94a8bd;
+    margin-bottom: 24px;
 }
 
-.documentation{
-    background:#0b111a;
-    border:1px solid #202d3c;
-    border-radius:16px;
-    padding:16px;
+.documentation {
+    background: #0b111a;
+    border: 1px solid #202d3c;
+    border-radius: 16px;
+    padding: 16px;
 }
 
-.documentation img{
-    width:100%;
-    height:auto;
-    border-radius:10px;
-    border:1px solid #202d3c;
-    background:#05080d;
+.documentation img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #202d3c;
+    background: #05080d;
 }
 
-.caption{
-    padding:16px 4px 2px;
-    color:#9db0c5;
-    font-size:14px;
+.caption {
+    padding: 16px 4px 2px;
+    color: #9db0c5;
+    font-size: 14px;
 }
 
-.certificate{
-    background:#0e1723;
-    border:1px solid #2a3b4f;
-    border-left:3px solid #35d6ff;
-    border-radius:16px;
-    padding:28px;
+.certificate {
+    background: #0e1723;
+    border: 1px solid #2a3b4f;
+    border-left: 3px solid #35d6ff;
+    border-radius: 16px;
+    padding: 28px;
 }
 
-.certificate p{
-    color:#a8b8ca;
-    margin-bottom:12px;
+.certificate p {
+    color: #a8b8ca;
+    margin-bottom: 12px;
 }
 
-.result{
-    background:#0e1723;
-    border:1px solid #2a3b4f;
-    border-left:3px solid #35d6ff;
-    border-radius:16px;
-    padding:30px;
+.certificate-image {
+    margin-top: 25px;
 }
 
-.result p{
-    color:#a8b8ca;
-    margin-bottom:20px;
+.certificate-image img {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #293747;
 }
 
-.button{
-    display:inline-block;
-    padding:10px 16px;
-    border:1px solid #293747;
-    border-radius:10px;
-    background:#111b27;
-    color:#e8eef7;
-    font-size:14px;
+.result {
+    background: #0e1723;
+    border: 1px solid #2a3b4f;
+    border-left: 3px solid #35d6ff;
+    border-radius: 16px;
+    padding: 30px;
 }
 
-.button:hover{
-    border-color:#35d6ff;
-    color:#35d6ff;
+.result p {
+    color: #a8b8ca;
+    margin-bottom: 20px;
 }
 
-footer{
-    border-top:1px solid #1c2633;
-    padding:35px 24px;
-    color:#73859a;
-    font-size:14px;
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 1px solid #293747;
+    border-radius: 10px;
+    background: #111b27;
+    color: #e8eef7;
+    font-size: 14px;
 }
 
-.footer-inner{
-    max-width:1000px;
-    margin:auto;
+.button:hover {
+    border-color: #35d6ff;
+    color: #35d6ff;
 }
 
-@media(max-width:700px){
+footer {
+    border-top: 1px solid #1c2633;
+    padding: 35px 24px;
+    color: #73859a;
+    font-size: 14px;
+}
 
-    .nav{
-        padding:16px 18px;
+.footer-inner {
+    max-width: 1000px;
+    margin: auto;
+}
+
+@media (max-width: 700px) {
+
+    .nav {
+        padding: 16px 18px;
     }
 
-    .brand{
-        font-size:14px;
+    .brand {
+        font-size: 14px;
     }
 
-    main{
-        padding:55px 18px;
+    main {
+        padding: 55px 18px;
     }
 
-    h1{
-        font-size:42px;
-        letter-spacing:-1.5px;
+    h1 {
+        font-size: 42px;
+        letter-spacing: -1.5px;
     }
 
-    .hero-text{
-        font-size:15px;
+    .hero-text {
+        font-size: 15px;
     }
 
-    h2{
-        font-size:26px;
+    h2 {
+        font-size: 26px;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .grid {
+        grid-template-columns: 1fr;
     }
 
-    .chapter-title{
-        font-size:24px;
+    .chapter-title {
+        font-size: 24px;
     }
 
-    .documentation{
-        padding:10px;
+    .documentation {
+        padding: 10px;
+    }
+
+    .certificate {
+        padding: 20px;
     }
 }
 </style>
@@ -298,651 +314,847 @@ footer{
 <body>
 
 <header>
-<nav class="nav">
+    <nav class="nav">
 
-<a href="/" class="brand">
-<span>YF.</span> Yahya Fauzan Sumpena Putra
-</a>
+        <a href="/" class="brand">
+            <span>YF.</span> Yahya Fauzan Sumpena Putra
+        </a>
 
-<a href="/" class="back">
-← Portfolio
-</a>
+        <a href="/" class="back">
+            ← Portfolio
+        </a>
 
-</nav>
+    </nav>
 </header>
+
 
 <main>
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section>
 
-<div class="label">PROJECT 02</div>
+    <div class="label">
+        PROJECT 02
+    </div>
 
-<h1>Proxmox Server Lab</h1>
+    <h1>
+        Proxmox Server Lab
+    </h1>
 
-<p class="hero-text">
-Project virtualisasi server menggunakan Proxmox VE untuk
-membangun environment server dan menjalankan layanan
-berbasis Linux, Web Server, Database Server, serta
-Moodle sebagai platform pembelajaran.
-</p>
+    <p class="hero-text">
+        Project virtualisasi server menggunakan Proxmox VE
+        untuk membangun environment server berbasis Linux,
+        Web Server, Database Server, dan Moodle.
+    </p>
 
-<div class="tags">
-<span class="tag">Proxmox VE</span>
-<span class="tag">Virtualization</span>
-<span class="tag">Linux Server</span>
-<span class="tag">Web Server</span>
-<span class="tag">Database</span>
-<span class="tag">Moodle</span>
-</div>
+    <div class="tags">
+        <span class="tag">Proxmox VE</span>
+        <span class="tag">Virtualization</span>
+        <span class="tag">Linux Server</span>
+        <span class="tag">Web Server</span>
+        <span class="tag">Database</span>
+        <span class="tag">Moodle</span>
+    </div>
 
 </section>
 
 
-<!-- OVERVIEW -->
+<!-- =========================
+     OVERVIEW
+========================= -->
 
 <section>
 
-<h2>Project Overview</h2>
+    <h2>
+        Project Overview
+    </h2>
 
-<div class="grid">
+    <div class="grid">
 
-<div class="card">
+        <div class="card">
 
-<h3>Tujuan</h3>
+            <h3>
+                Tujuan
+            </h3>
 
-<p>
-Membangun environment server virtual menggunakan Proxmox VE
-dan melakukan deployment layanan server hingga Moodle
-dapat digunakan.
-</p>
+            <p>
+                Membangun environment server virtual menggunakan
+                Proxmox VE dan melakukan deployment layanan
+                server hingga Moodle dapat digunakan.
+            </p>
 
-</div>
+        </div>
 
-<div class="card">
+        <div class="card">
 
-<h3>Teknologi</h3>
+            <h3>
+                Teknologi
+            </h3>
 
-<ul>
-<li>Proxmox VE</li>
-<li>Virtual Machine</li>
-<li>Linux Server</li>
-<li>Web Server</li>
-<li>Database Server</li>
-<li>Moodle</li>
-</ul>
+            <ul>
+                <li>Proxmox VE</li>
+                <li>Virtual Machine</li>
+                <li>Linux Server</li>
+                <li>Web Server</li>
+                <li>Database Server</li>
+                <li>Moodle</li>
+            </ul>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- ARCHITECTURE -->
+<!-- =========================
+     SERVER ARCHITECTURE
+========================= -->
 
 <section>
 
-<h2>Server Architecture</h2>
+    <h2>
+        Server Architecture
+    </h2>
 
-<p class="section-description">
-Project menggunakan environment virtual server dengan
-pemisahan Web Server dan Database Server sebagai
-komponen utama deployment Moodle.
-</p>
+    <p class="section-description">
+        Environment virtual server digunakan untuk memisahkan
+        kebutuhan Web Server dan Database Server sebelum
+        aplikasi Moodle dijalankan.
+    </p>
 
-<div class="grid">
+    <div class="grid">
 
-<div class="card">
+        <div class="card">
 
-<h3>Web Server</h3>
+            <h3>
+                Web Server
+            </h3>
 
-<p>
-Server yang digunakan untuk menjalankan layanan web
-dan aplikasi Moodle.
-</p>
+            <p>
+                Server yang digunakan untuk menjalankan
+                layanan web dan aplikasi Moodle.
+            </p>
 
-</div>
+        </div>
 
-<div class="card">
+        <div class="card">
 
-<h3>Database Server</h3>
+            <h3>
+                Database Server
+            </h3>
 
-<p>
-Server yang menyediakan database untuk kebutuhan
-aplikasi Moodle.
-</p>
+            <p>
+                Server yang menyediakan database untuk
+                kebutuhan aplikasi Moodle.
+            </p>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 01 -->
+<!-- =========================
+     BAB 01
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 01</div>
+    <div class="chapter-number">
+        BAB 01
+    </div>
 
-<h2 class="chapter-title">Web Server IP</h2>
+    <h2 class="chapter-title">
+        Web Server IP
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi konfigurasi alamat IP pada Web Server.
-</p>
+    <p class="chapter-text">
+        Dokumentasi konfigurasi alamat IP pada Web Server.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/01-Web-Server-IP.png"
-alt="Web Server IP"
-loading="lazy">
+        <img
+            src="images/01-Web-Server-IP.png"
+            alt="Web Server IP"
+            loading="lazy"
+        >
 
-<div class="caption">
-Konfigurasi IP pada Web Server.
-</div>
+        <div class="caption">
+            Konfigurasi IP pada Web Server.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 02 -->
+<!-- =========================
+     BAB 02
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 02</div>
+    <div class="chapter-number">
+        BAB 02
+    </div>
 
-<h2 class="chapter-title">Database Server IP</h2>
+    <h2 class="chapter-title">
+        Database Server IP
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi konfigurasi alamat IP pada Database Server.
-</p>
+    <p class="chapter-text">
+        Dokumentasi konfigurasi alamat IP pada Database Server.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/02-Database-Server-IP.png"
-alt="Database Server IP"
-loading="lazy">
+        <img
+            src="images/02-Database-Server-IP.png"
+            alt="Database Server IP"
+            loading="lazy"
+        >
 
-<div class="caption">
-Konfigurasi IP pada Database Server.
-</div>
+        <div class="caption">
+            Konfigurasi IP pada Database Server.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 03 -->
+<!-- =========================
+     BAB 03
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 03</div>
+    <div class="chapter-number">
+        BAB 03
+    </div>
 
-<h2 class="chapter-title">Moodle Directory</h2>
+    <h2 class="chapter-title">
+        Moodle Directory
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi struktur direktori Moodle pada server.
-</p>
+    <p class="chapter-text">
+        Dokumentasi struktur direktori Moodle pada server.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/03-Moodle-Directory.png"
-alt="Moodle Directory"
-loading="lazy">
+        <img
+            src="images/03-Moodle-Directory.png"
+            alt="Moodle Directory"
+            loading="lazy"
+        >
 
-<div class="caption">
-Struktur direktori Moodle.
-</div>
+        <div class="caption">
+            Struktur direktori Moodle.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 04 -->
+<!-- =========================
+     BAB 04
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 04</div>
+    <div class="chapter-number">
+        BAB 04
+    </div>
 
-<h2 class="chapter-title">Moodle Configuration</h2>
+    <h2 class="chapter-title">
+        Moodle Configuration
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi konfigurasi aplikasi Moodle.
-</p>
+    <p class="chapter-text">
+        Dokumentasi konfigurasi aplikasi Moodle.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/04-Moodle-Config.png"
-alt="Moodle Configuration"
-loading="lazy">
+        <img
+            src="images/04-Moodle-Config.png"
+            alt="Moodle Configuration"
+            loading="lazy"
+        >
 
-<div class="caption">
-Konfigurasi Moodle pada server.
-</div>
+        <div class="caption">
+            Konfigurasi Moodle pada server.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 05 -->
+<!-- =========================
+     BAB 05
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 05</div>
+    <div class="chapter-number">
+        BAB 05
+    </div>
 
-<h2 class="chapter-title">Moodle Database Configuration</h2>
+    <h2 class="chapter-title">
+        Moodle Database Configuration
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi konfigurasi database untuk Moodle.
-</p>
+    <p class="chapter-text">
+        Dokumentasi konfigurasi database untuk Moodle.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/05-Moodle-Database-Config.png"
-alt="Moodle Database Configuration"
-loading="lazy">
+        <img
+            src="images/05-Moodle-Database-Config.png"
+            alt="Moodle Database Configuration"
+            loading="lazy"
+        >
 
-<div class="caption">
-Konfigurasi database Moodle.
-</div>
+        <div class="caption">
+            Konfigurasi database Moodle.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 06 -->
+<!-- =========================
+     BAB 06
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 06</div>
+    <div class="chapter-number">
+        BAB 06
+    </div>
 
-<h2 class="chapter-title">Composer Dependencies</h2>
+    <h2 class="chapter-title">
+        Composer Dependencies
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi dependency yang digunakan dalam environment
-aplikasi Moodle.
-</p>
+    <p class="chapter-text">
+        Dokumentasi dependency yang digunakan dalam
+        environment aplikasi Moodle.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/06-Composer-Dependencies.png"
-alt="Composer Dependencies"
-loading="lazy">
+        <img
+            src="images/06-Composer-Dependencies.png"
+            alt="Composer Dependencies"
+            loading="lazy"
+        >
 
-<div class="caption">
-Dependency aplikasi menggunakan Composer.
-</div>
+        <div class="caption">
+            Dependency aplikasi menggunakan Composer.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 07 -->
+<!-- =========================
+     BAB 07
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 07</div>
+    <div class="chapter-number">
+        BAB 07
+    </div>
 
-<h2 class="chapter-title">Moodle Cron</h2>
+    <h2 class="chapter-title">
+        Moodle Cron
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi konfigurasi Moodle Cron untuk menjalankan
-proses otomatis Moodle.
-</p>
+    <p class="chapter-text">
+        Dokumentasi konfigurasi Moodle Cron untuk menjalankan
+        proses otomatis Moodle.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/07-Moodle-Cron.png"
-alt="Moodle Cron"
-loading="lazy">
+        <img
+            src="images/07-Moodle-Cron.png"
+            alt="Moodle Cron"
+            loading="lazy"
+        >
 
-<div class="caption">
-Konfigurasi Moodle Cron.
-</div>
+        <div class="caption">
+            Konfigurasi Moodle Cron.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 08 -->
+<!-- =========================
+     BAB 08
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 08</div>
+    <div class="chapter-number">
+        BAB 08
+    </div>
 
-<h2 class="chapter-title">Cron Service</h2>
+    <h2 class="chapter-title">
+        Cron Service
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi service Cron pada Linux Server.
-</p>
+    <p class="chapter-text">
+        Dokumentasi service Cron pada Linux Server.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/08-Cron-Service.png"
-alt="Cron Service"
-loading="lazy">
+        <img
+            src="images/08-Cron-Service.png"
+            alt="Cron Service"
+            loading="lazy"
+        >
 
-<div class="caption">
-Service Cron pada Linux Server.
-</div>
+        <div class="caption">
+            Service Cron pada Linux Server.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 09 -->
+<!-- =========================
+     BAB 09
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 09</div>
+    <div class="chapter-number">
+        BAB 09
+    </div>
 
-<h2 class="chapter-title">Moodledata Permission</h2>
+    <h2 class="chapter-title">
+        Moodledata Permission
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi pengaturan permission direktori Moodledata.
-</p>
+    <p class="chapter-text">
+        Dokumentasi pengaturan permission direktori Moodledata.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/09-Moodledata-Permission.png"
-alt="Moodledata Permission"
-loading="lazy">
+        <img
+            src="images/09-Moodledata-Permission.png"
+            alt="Moodledata Permission"
+            loading="lazy"
+        >
 
-<div class="caption">
-Pengaturan permission Moodledata.
-</div>
+        <div class="caption">
+            Pengaturan permission Moodledata.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 10 -->
+<!-- =========================
+     BAB 10
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 10</div>
+    <div class="chapter-number">
+        BAB 10
+    </div>
 
-<h2 class="chapter-title">Moodle Environment Check</h2>
+    <h2 class="chapter-title">
+        Moodle Environment Check
+    </h2>
 
-<p class="chapter-text">
-Pemeriksaan environment untuk memastikan kebutuhan
-Moodle dapat dipenuhi.
-</p>
+    <p class="chapter-text">
+        Pemeriksaan environment untuk memastikan kebutuhan
+        Moodle dapat dipenuhi.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/10-Moodle-Environment-Check.png"
-alt="Moodle Environment Check"
-loading="lazy">
+        <img
+            src="images/10-Moodle-Environment-Check.png"
+            alt="Moodle Environment Check"
+            loading="lazy"
+        >
 
-<div class="caption">
-Pemeriksaan environment Moodle.
-</div>
+        <div class="caption">
+            Pemeriksaan environment Moodle.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 11 -->
+<!-- =========================
+     BAB 11
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 11</div>
+    <div class="chapter-number">
+        BAB 11
+    </div>
 
-<h2 class="chapter-title">Moodle Dashboard</h2>
+    <h2 class="chapter-title">
+        Moodle Dashboard
+    </h2>
 
-<p class="chapter-text">
-Tampilan dashboard Moodle setelah instalasi dan
-konfigurasi berhasil.
-</p>
+    <p class="chapter-text">
+        Tampilan dashboard Moodle setelah instalasi dan
+        konfigurasi berhasil.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/11-Moodle-Dashboard.png"
-alt="Moodle Dashboard"
-loading="lazy">
+        <img
+            src="images/11-Moodle-Dashboard.png"
+            alt="Moodle Dashboard"
+            loading="lazy"
+        >
 
-<div class="caption">
-Dashboard Moodle.
-</div>
+        <div class="caption">
+            Dashboard Moodle.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 12 -->
+<!-- =========================
+     BAB 12
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 12</div>
+    <div class="chapter-number">
+        BAB 12
+    </div>
 
-<h2 class="chapter-title">Moodle Site Administration</h2>
+    <h2 class="chapter-title">
+        Moodle Site Administration
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi pengelolaan administrasi situs Moodle.
-</p>
+    <p class="chapter-text">
+        Dokumentasi pengelolaan administrasi situs Moodle.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/12-Moodle-Site-Administration.png"
-alt="Moodle Site Administration"
-loading="lazy">
+        <img
+            src="images/12-Moodle-Site-Administration.png"
+            alt="Moodle Site Administration"
+            loading="lazy"
+        >
 
-<div class="caption">
-Moodle Site Administration.
-</div>
+        <div class="caption">
+            Moodle Site Administration.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 13 -->
+<!-- =========================
+     BAB 13
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 13</div>
+    <div class="chapter-number">
+        BAB 13
+    </div>
 
-<h2 class="chapter-title">Moodle Course / Learning Page</h2>
+    <h2 class="chapter-title">
+        Moodle Course / Learning Page
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi halaman course dan learning pada Moodle.
-</p>
+    <p class="chapter-text">
+        Dokumentasi halaman course dan learning pada Moodle.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/13-Moodle-Course-Learning.png"
-alt="Moodle Course Learning"
-loading="lazy">
+        <img
+            src="images/13-Moodle-Course-Learning.png"
+            alt="Moodle Course Learning"
+            loading="lazy"
+        >
 
-<div class="caption">
-Halaman course / learning Moodle.
-</div>
+        <div class="caption">
+            Halaman course / learning Moodle.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 14 -->
+<!-- =========================
+     BAB 14
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 14</div>
+    <div class="chapter-number">
+        BAB 14
+    </div>
 
-<h2 class="chapter-title">Moodle User Management</h2>
+    <h2 class="chapter-title">
+        Moodle User Management
+    </h2>
 
-<p class="chapter-text">
-Dokumentasi pengelolaan user pada Moodle.
-</p>
+    <p class="chapter-text">
+        Dokumentasi pengelolaan user pada Moodle.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/14-Moodle-User-Management.png"
-alt="Moodle User Management"
-loading="lazy">
+        <img
+            src="images/14-Moodle-User-Management.png"
+            alt="Moodle User Management"
+            loading="lazy"
+        >
 
-<div class="caption">
-User Management pada Moodle.
-</div>
+        <div class="caption">
+            User Management pada Moodle.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- BAB 15 -->
+<!-- =========================
+     BAB 15
+========================= -->
 
 <section class="chapter">
 
-<div class="chapter-number">BAB 15</div>
+    <div class="chapter-number">
+        BAB 15
+    </div>
 
-<h2 class="chapter-title">Moodle Final Working State</h2>
+    <h2 class="chapter-title">
+        Moodle Final Working State
+    </h2>
 
-<p class="chapter-text">
-Kondisi akhir project setelah environment server,
-database, Moodle, konfigurasi, dan administrasi
-berhasil dijalankan.
-</p>
+    <p class="chapter-text">
+        Kondisi akhir project setelah environment server,
+        database, Moodle, konfigurasi, dan administrasi
+        berhasil dijalankan.
+    </p>
 
-<div class="documentation">
+    <div class="documentation">
 
-<img src="images/15-Moodle-Final-Working-State.png"
-alt="Moodle Final Working State"
-loading="lazy">
+        <img
+            src="images/15-Moodle-Final-Working-State.png"
+            alt="Moodle Final Working State"
+            loading="lazy"
+        >
 
-<div class="caption">
-Final working state Project Proxmox Server Lab.
-</div>
+        <div class="caption">
+            Final working state Project Proxmox Server Lab.
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- CERTIFICATE -->
+<!-- =========================
+     CERTIFICATE
+========================= -->
 
 <section>
 
-<h2>Relevant Competency</h2>
+    <h2>
+        Relevant Competency
+    </h2>
 
-<div class="certificate">
+    <div class="certificate">
 
-<h3>
-Sertifikat Kompetensi Teknik Komputer dan Jaringan
-</h3>
+        <h3>
+            Sertifikat Kompetensi Teknik Komputer dan Jaringan
+        </h3>
 
-<p>
-<strong>Kompetensi Keahlian:</strong>
-Teknik Komputer dan Jaringan
-</p>
+        <p>
+            <strong>Kompetensi Keahlian:</strong><br>
+            Teknik Komputer dan Jaringan
+        </p>
 
-<p>
-<strong>Judul Penugasan:</strong><br>
-Merancang Arsitektur, Layanan, Perangkat Lunak dan Sarana
-pada Jaringan Private Cloud
-</p>
+        <p>
+            <strong>Judul Penugasan:</strong><br>
+            Merancang Arsitektur, Layanan, Perangkat Lunak
+            dan Sarana pada Jaringan Private Cloud
+        </p>
 
-<p>
-<strong>Predikat:</strong>
-Sangat Kompeten (Very Competent)
-</p>
+        <p>
+            <strong>Predikat:</strong><br>
+            Sangat Kompeten (Very Competent)
+        </p>
 
-<p>
-<strong>Masa berlaku:</strong>
-3 tahun
-</p>
+        <p>
+            <strong>Masa berlaku:</strong><br>
+            3 tahun
+        </p>
 
-<p>
-Kompetensi ini relevan sebagai pendukung project
-virtualisasi server dan konsep private cloud yang
-diterapkan dalam Proxmox Server Lab.
-</p>
-
-</div>
-
-</section>
+        <p>
+            Kompetensi ini relevan sebagai pendukung project
+            virtualisasi server dan konsep private cloud yang
+            diterapkan dalam Proxmox Server Lab.
+        </p>
 
 
-<!-- SKILLS -->
+        <!-- CERTIFICATE IMAGE -->
 
-<section>
+        <div class="certificate-image">
 
-<h2>Skills Demonstrated</h2>
+            <img
+                src="images/Sertifikat-Kompetensi-Private-Cloud.png"
+                alt="Sertifikat Kompetensi Teknik Komputer dan Jaringan Private Cloud"
+                loading="lazy"
+            >
 
-<div class="grid">
+            <div class="caption">
+                Sertifikat Kompetensi Teknik Komputer dan Jaringan —
+                Merancang Arsitektur, Layanan, Perangkat Lunak
+                dan Sarana pada Jaringan Private Cloud.
+            </div>
 
-<div class="card">
-<h3>Virtualization</h3>
-<p>
-Penggunaan environment virtual server menggunakan
-Proxmox VE.
-</p>
-</div>
+        </div>
 
-<div class="card">
-<h3>Linux Server</h3>
-<p>
-Konfigurasi dan pengelolaan server Linux untuk
-kebutuhan aplikasi.
-</p>
-</div>
-
-<div class="card">
-<h3>Web & Database</h3>
-<p>
-Pengelolaan Web Server dan Database Server sebagai
-komponen aplikasi.
-</p>
-</div>
-
-<div class="card">
-<h3>Moodle</h3>
-<p>
-Deployment dan konfigurasi Moodle hingga mencapai
-final working state.
-</p>
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- RESULT -->
+<!-- =========================
+     SKILLS
+========================= -->
 
 <section>
 
-<h2>Project Result</h2>
+    <h2>
+        Skills Demonstrated
+    </h2>
 
-<div class="result">
+    <div class="grid">
 
-<h3>Proxmox Server Lab</h3>
+        <div class="card">
 
-<p>
-Project mendokumentasikan pembangunan environment server
-virtual, konfigurasi Web Server dan Database Server,
-deployment Moodle, konfigurasi environment, Cron,
-permission, administrasi Moodle, hingga final working state.
-</p>
+            <h3>
+                Virtualization
+            </h3>
 
-<a href="/" class="button">
-← Kembali ke Portfolio
-</a>
+            <p>
+                Penggunaan environment virtual server
+                menggunakan Proxmox VE.
+            </p>
 
-</div>
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Linux Server
+            </h3>
+
+            <p>
+                Konfigurasi dan pengelolaan server Linux
+                untuk kebutuhan aplikasi.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Web & Database
+            </h3>
+
+            <p>
+                Pengelolaan Web Server dan Database Server
+                sebagai komponen aplikasi.
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Moodle
+            </h3>
+
+            <p>
+                Deployment dan konfigurasi Moodle hingga
+                mencapai final working state.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     RESULT
+========================= -->
+
+<section>
+
+    <h2>
+        Project Result
+    </h2>
+
+    <div class="result">
+
+        <h3>
+            Proxmox Server Lab
+        </h3>
+
+        <p>
+            Project mendokumentasikan pembangunan environment
+            server virtual, konfigurasi Web Server dan Database
+            Server, deployment Moodle, konfigurasi environment,
+            Cron, permission, administrasi Moodle, hingga
+            final working state.
+        </p>
+
+        <a href="/" class="button">
+            ← Kembali ke Portfolio
+        </a>
+
+    </div>
 
 </section>
 
@@ -951,9 +1163,9 @@ permission, administrasi Moodle, hingga final working state.
 
 <footer>
 
-<div class="footer-inner">
-© 2026 Yahya Fauzan Sumpena Putra · Proxmox Server Lab
-</div>
+    <div class="footer-inner">
+        © 2026 Yahya Fauzan Sumpena Putra · Proxmox Server Lab
+    </div>
 
 </footer>
 
