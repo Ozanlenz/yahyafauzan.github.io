@@ -92,6 +92,11 @@ img, svg, canvas {
     height: auto;
     display: block;
 }
+/* 5. Kunci ruang navigasi (#navLinks) untuk mengatasi masalah pergeseran teks (CLS) */
+#navLinks {
+    white-space: nowrap;
+    min-height: 24px;
+}
 
 @media(max-width:780px){.menu-toggle{display:block}.links{display:none;position:fixed;top:70px;left:0;width:100%;flex-direction:column;gap:0;background:#0d121b;border-bottom:1px solid #1d2633;box-shadow:0 12px 24px rgba(0,0,0,.4)}.links.open{display:flex}.links li{width:100%}.links a{display:block;padding:16px 20px;border-bottom:1px solid #161e29}.about,.skills,.projects,.certs{grid-template-columns:1fr}section{padding:75px 0}h2{font-size:32px}.stats{gap:22px}#toTop{right:16px;bottom:16px}}
 @media print{
@@ -287,9 +292,12 @@ img, svg, canvas {
     </div></div></section>
 
 <section id="experience"><div class="container"><span class="kicker">05 — Experience</span><h2>Experience</h2><p class="section-desc">Pengalaman dan pendidikan.</p>
-<div class="timeline"><div class="timeline-item reveal"><small>ISP TECHNICIAN · 3 BULAN</small><h3>Vendor Teknisi ISP Starlite</h3><p class="muted">Instalasi dan troubleshooting jaringan internet pelanggan, konfigurasi perangkat ISP, serta pemeliharaan koneksi di lapangan.</p></div>
-<div class="timeline-item reveal"><small>IT SUPPORT · 1 TAHUN</small><h3>DPRD Jawa Barat</h3><p class="muted">Instalasi dan konfigurasi sistem operasi Windows, troubleshooting hardware dan software, pemeliharaan komputer, laptop dan printer, instalasi jaringan LAN dan fiber optic, pemasangan CCTV, serta konfigurasi router dan access point.</p></div>
-<div class="timeline-item reveal"><small>EDUCATION</small><h3>SMK Handayani Banjaran</h3><p class="muted">Teknik Komputer dan Jaringan. Mempelajari dasar komputer, jaringan, server dan troubleshooting.</p></div></div></div></section>
+<div class="timeline">
+<div class="timeline-item reveal"><small>MAINTENANCE TECHNICIAN · 1 BULAN</small><h3>Teknisi Maintenance Photobooth</h3><p class="muted">Melakukan pemeliharaan dan troubleshooting hardware maupun software pada sistem photobooth, serta mengelola remote server dan monitoring perangkat pendukung (kamera dan printer) untuk memastikan kelancaran operasional.</p></div>
+<div class="timeline-item reveal"><small>ISP TECHNICIAN · 3 BULAN</small><h3>Vendor Teknisi ISP Starlite</h3><p class="muted">Instalasi dan troubleshooting jaringan internet pelanggan, konfigurasi perangkat ISP, serta pemeliharaan koneksi di lapangan.</p></div>
+<div class="timeline-item reveal"><small>IT SUPPORT · 1 TAHUN</small><h3>Gedung DPRD Provinsi Jawa Barat</h3><p class="muted">Instalasi dan konfigurasi sistem operasi Windows, troubleshooting hardware dan software, pemeliharaan komputer, laptop dan printer, instalasi jaringan LAN dan fiber optic, pemasangan CCTV, serta konfigurasi router dan access point.</p></div>
+<div class="timeline-item reveal"><small>EDUCATION</small><h3>SMK Handayani Banjaran</h3><p class="muted">Teknik Komputer dan Jaringan. Mempelajari dasar komputer, jaringan, server dan troubleshooting.</p></div>
+</div></div></section>
 
 <section id="contact"><div class="container"><div class="box contact reveal"><span class="kicker">06 — Contact</span><h2>Let's Connect</h2><p class="section-desc">Tertarik bekerja sama atau ingin melihat project saya?</p><div class="actions" style="justify-content:center"><a class="btn primary" href="https://wa.me/6285860059240" target="_blank" rel="noopener">WhatsApp</a><button class="btn copy-btn" id="copyEmailBtn" data-email="yahyafauzansumpenaputra@gmail.com">Copy Email</button><button class="btn copy-btn" id="copyLinkBtn" data-link="https://yahyafauzan.my.id/">Copy Link</button><a class="btn" href="CV-Yahya-Fauzan-Sumpena-Putra.pdf" download>Download CV ↓</a></div></div></div></section>
 
