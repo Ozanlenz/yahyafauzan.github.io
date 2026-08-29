@@ -32,7 +32,20 @@ h1,h2,h3,.logo{font-family:'Space Grotesk','Inter',Arial,sans-serif}
 .kicker,.eyebrow,.num,.pill,.tag,.timeline-item small,.stat b,.stat span{font-family:'JetBrains Mono',Consolas,monospace}
 :focus-visible{outline:2px solid #00d4ff;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
-nav{position:fixed;top:0;left:0;width:100%;z-index:10;background:rgba(8,11,18,.88);backdrop-filter:blur(12px);border-bottom:1px solid #1d2633}.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;font-size:21px}.logo b{color:#00d4ff}.links{display:flex;gap:20px;list-style:none}.links a{color:#aeb7c5;font-size:14px}.links a:hover{color:#00d4ff}.menu-toggle{display:none;background:none;border:1px solid #263243;border-radius:8px;color:#f5f7fb;font-size:20px;line-height:1;padding:7px 12px;cursor:pointer}.menu-toggle:hover{border-color:#00d4ff;color:#00d4ff}
+nav{position:fixed;top:0;left:0;width:100%;z-index:10;background:rgba(8,11,18,.88);backdrop-filter:blur(12px);border-bottom:1px solid #1d2633}.nav{height:70px;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;font-size:21px}.logo b{color:#00d4ff}.links{
+  display:flex;
+  gap:0;
+  justify-content:space-between;
+  list-style:none;
+  width:439px;
+  min-width:439px;
+  flex:0 0 439px;
+}
+.links a{
+  color:#aeb7c5;
+  font-size:14px;
+  white-space:nowrap;
+}.links a:hover{color:#00d4ff}.menu-toggle{display:none;background:none;border:1px solid #263243;border-radius:8px;color:#f5f7fb;font-size:20px;line-height:1;padding:7px 12px;cursor:pointer}.menu-toggle:hover{border-color:#00d4ff;color:#00d4ff}
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:70px;overflow:hidden}
@@ -63,13 +76,11 @@ section{padding:95px 0;border-top:1px solid #161e29}.kicker{color:#00d4ff;letter
 
 /* =========================
    FIX CLS — HANYA TAMBAHAN CSS
-   (TIDAK MENGUBAH DESAIN)
+   (TIDAK MENGUBAH DESAIN ASLI)
 ========================= */
-/* 1. Kunci ruang Hero agar tidak mendorong konten */
 .hero-inner {
     min-height: 520px;
 }
-/* 2. Kunci ruang teks agar tidak melompat */
 .status-badge {
     min-height: 38px;
 }
@@ -82,23 +93,16 @@ section{padding:95px 0;border-top:1px solid #161e29}.kicker{color:#00d4ff;letter
 h1 {
     min-height: 1.2em;
 }
-/* 3. Kunci ruang Canvas agar berubah ukuran secara halus */
 #netBg {
     min-height: 100vh;
 }
-/* 4. Cegah gambar/gambar besar berubah ukuran mendadak */
 img, svg, canvas {
     max-width: 100%;
     height: auto;
     display: block;
 }
-/* 5. Kunci ruang navigasi (#navLinks) untuk mengatasi masalah pergeseran teks (CLS) */
-#navLinks {
-    white-space: nowrap;
-    min-height: 24px;
-}
 
-@media(max-width:780px){.menu-toggle{display:block}.links{display:none;position:fixed;top:70px;left:0;width:100%;flex-direction:column;gap:0;background:#0d121b;border-bottom:1px solid #1d2633;box-shadow:0 12px 24px rgba(0,0,0,.4)}.links.open{display:flex}.links li{width:100%}.links a{display:block;padding:16px 20px;border-bottom:1px solid #161e29}.about,.skills,.projects,.certs{grid-template-columns:1fr}section{padding:75px 0}h2{font-size:32px}.stats{gap:22px}#toTop{right:16px;bottom:16px}}
+@media(max-width:780px){.menu-toggle{display:block}.links{display:none;position:fixed;top:70px;left:0;width:100%;min-width:0;flex:0 0 auto;flex-direction:column;gap:0;background:#0d121b;border-bottom:1px solid #1d2633;box-shadow:0 12px 24px rgba(0,0,0,.4)}.links.open{display:flex}.links li{width:100%}.links a{display:block;padding:16px 20px;border-bottom:1px solid #161e29}.about,.skills,.projects,.certs{grid-template-columns:1fr}section{padding:75px 0}h2{font-size:32px}.stats{gap:22px}#toTop{right:16px;bottom:16px}}
 @media print{
   #netBg,#scrollBar,#toTop,nav,.skip-link,.menu-toggle,.filters,.actions,.cert-actions,.eyebrow,.status-badge,.typewriter{display:none!important}
   body{background:#fff!important;color:#111!important}
@@ -293,7 +297,7 @@ img, svg, canvas {
 
 <section id="experience"><div class="container"><span class="kicker">05 — Experience</span><h2>Experience</h2><p class="section-desc">Pengalaman dan pendidikan.</p>
 <div class="timeline">
-<div class="timeline-item reveal"><small>MAINTENANCE TECHNICIAN · 1 BULAN</small><h3>Teknisi Maintenance Photobooth</h3><p class="muted">Melakukan pemeliharaan dan troubleshooting hardware maupun software pada sistem photobooth, serta mengelola remote server dan monitoring perangkat pendukung (kamera dan printer) untuk memastikan kelancaran operasional.</p></div>
+<div class="timeline-item reveal"><small>MAINTENANCE TECHNICIAN · 1 BULAN</small><h3>Teknisi Maintenance Photobooth</h3><p class="muted">Melakukan pemeliharaan dan troubleshooting hardware maupun software pada sistem photobooth, serta mengelola remote server dan monitoring perangkat (seperti kamera dan printer) agar berjalan dengan normal.</p></div>
 <div class="timeline-item reveal"><small>ISP TECHNICIAN · 3 BULAN</small><h3>Vendor Teknisi ISP Starlite</h3><p class="muted">Instalasi dan troubleshooting jaringan internet pelanggan, konfigurasi perangkat ISP, serta pemeliharaan koneksi di lapangan.</p></div>
 <div class="timeline-item reveal"><small>IT SUPPORT · 1 TAHUN</small><h3>Gedung DPRD Provinsi Jawa Barat</h3><p class="muted">Instalasi dan konfigurasi sistem operasi Windows, troubleshooting hardware dan software, pemeliharaan komputer, laptop dan printer, instalasi jaringan LAN dan fiber optic, pemasangan CCTV, serta konfigurasi router dan access point.</p></div>
 <div class="timeline-item reveal"><small>EDUCATION</small><h3>SMK Handayani Banjaran</h3><p class="muted">Teknik Komputer dan Jaringan. Mempelajari dasar komputer, jaringan, server dan troubleshooting.</p></div>
